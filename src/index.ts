@@ -1,3 +1,5 @@
-export * from "./hooks/usePleaseStay";
-export * from "./hooks/useInterval";
+export * from "./hooks/usePleaseStay/index";
+export * from "./hooks/useInterval/index";
+
+/** types */
 export * from "./enums/AnimationTypes";

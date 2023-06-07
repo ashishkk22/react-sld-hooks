@@ -1,12 +1,21 @@
 import { useEffect, useState } from "react";
-import { useInterval } from "./useInterval";
-import { AnimationType } from "../enums/AnimationTypes";
-import { TAB_CHARACTER_COUNT } from "../constants/constants";
+import { useInterval } from "../useInterval/index";
+import { AnimationType } from "../../enums/AnimationTypes";
+import { TAB_CHARACTER_COUNT } from "../../constants/constants";
+
+/**
+ * Change the titles on Every interval if user is away from the page
+ * @param titles Array of the title to animate the title
+ * @param shouldIterateTitles iterate the title or not
+ * @param animationType animation type LOOP, CASCADE or MARQUEE
+ * @param interval interval to run the animation
+ */
 
 export const useTitleChangeEffect = (
   titles: string[],
   shouldIterateTitles: boolean,
-  animationType: AnimationType
+  animationType: AnimationType,
+  interval: number
 ) => {
   const [titleIndex, setTitleIndex] = useState(0);
 
@@ -71,7 +80,7 @@ export const useTitleChangeEffect = (
           return runLoopIterationLogic();
       }
     },
-    500,
+    interval,
     shouldIterateTitles
   );
 
@@ -86,5 +95,5 @@ export const useTitleChangeEffect = (
       default:
         return runLoopTitleLogic();
     }
-  }, [titleIndex]);
+  }, [titleIndex, animationType]);
 };

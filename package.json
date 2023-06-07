@@ -12,7 +12,8 @@
     "test": "jest",
     "format": "prettier --write --parser typescript '**/*.ts'",
     "lint": "eslint '**/*.{ts,tsx}'",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "bundle": "yarn build && npm link react-sld-hooks"
   },
   "repository": {
     "type": "git",

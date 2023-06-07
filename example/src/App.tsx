@@ -1,5 +1,12 @@
+import React from "react";
+import UsePleaseStay from "./components/UsePleaseStay";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <UsePleaseStay />
+    </>
+  );
 }
 
 export default App;
