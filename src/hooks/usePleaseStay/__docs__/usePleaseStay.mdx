@@ -1,0 +1,28 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import Example from "./Example.tsx";
+import * as UsePleaseStay from "./usePleaseStay.stories.tsx";
+
+<Meta of={UsePleaseStay} title="usePleaseStay" />
+
+# usePleaseStay
+
+Make title animate when user is away from the webpage.
+
+- Uses array of strings to display different titles.
+- Tracks document's `visibilityChange` event.
+
+## Reference
+
+```ts
+const usePleaseStay = (
+  titles: string[],
+  animationType: AnimationType,
+  interval: number
+) => void;
+```
+
+#### Arguments
+
+- **titles** _`string[]`_ - An array of strings representing different titles to be managed based on the animation type.
+- **animationType** _`AnimationType`_ - Specifies the type of animation to be applied.
+- **interval** _`number`_ - Determines the interval (in milliseconds) between each animation update.
