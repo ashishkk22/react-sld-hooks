@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { useTitleChangeEffect } from "./useTitleChangeEffect";
 import { useListenToVisibilityChangeOnMount } from "./useListenToVisibilityChangeOnMount";
 import { AnimationType } from "../../enums/AnimationTypes";

@@ -1,5 +1,6 @@
 import type { StorybookConfig } from "@storybook/react-vite";
 const config: StorybookConfig = {
+  staticDirs: ["./storybook-static"],
   stories: [
     "../src/hooks/**/__docs__/*.stories.tsx",
     "../src/hooks/**/__docs__/*.mdx",

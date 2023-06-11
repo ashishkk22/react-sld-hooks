@@ -19,7 +19,7 @@ export const useInterval = (
   }, [callback]);
 
   useEffect(() => {
-    if (!shouldRun) {
+    if (!shouldRun || !interval) {
       return;
     }
     const id = setInterval(() => callbackRef.current(), interval);

@@ -1,11 +1,32 @@
-import { Meta, Story } from "@storybook/addon-docs/blocks";
-import Temp from "./Temp.tsx";
-import { meta } from "./example.stories.tsx";
-<meta title="MDX/Card" component="{Card}" />;
+import { Canvas, Meta } from "@storybook/blocks";
+import Example from "./Example.tsx";
+import * as useInterval from "./useInterval.stories.tsx";
 
-export const PrimaryTemplate = () => ({});
+<Meta of={useInterval} title="useInterval" />
 
-<Story>
-  <Meta of={meta} />
-  <Temp />
-</Story>
+# useInterval
+
+useInterval allows you to control the execution of the callback function at a specific interval and toggle the interval on and off as needed.
+
+- Uses interval to run and flag to toggle the interval on and off as needed.
+
+#### Example
+
+<Canvas of={useInterval.Example_useInterval} />
+
+## Reference
+
+```ts
+const useInterval = (
+  callback: () => void,
+  interval: number,
+  shouldRun: boolean
+) => void;
+```
+
+#### Arguments
+
+- **callback** _`() => void`_ - Function to call within the interval.
+- **ms** _`number | undefined`_ - Delay passed to the underlying `setInterval`. If set to
+  `undefined`, the interval will be cancelled.
+- **shouldRun** _`boolean`_ - Flag to run or stop the interval. If set to `undefined`, the interval will be cancelled.
