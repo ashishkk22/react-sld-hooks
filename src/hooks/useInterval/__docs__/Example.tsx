@@ -1,6 +1,5 @@
 import React, { FC, useState } from "react";
 import { useInterval } from "..";
-import { AnimationType } from "../../../enums/AnimationTypes";
 
 type ExampleProps = {
   callback: () => void;
