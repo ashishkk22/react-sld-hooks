@@ -1,8 +1,16 @@
 {
   "name": "react-sld-hooks",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://react-sld-hooks.netlify.app/",
   "description": "A library for react custom hooks.",
+  "keywords": [
+    "react",
+    "hook",
+    "react-hook",
+    "react-hook-library",
+    "react-hooks",
+    "browser"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -27,7 +35,6 @@
   "bugs": {
     "url": "https://github.com/ashishkk22/react-sld-hooks/issues"
   },
-  "homepage": "https://github.com/ashishkk22/react-sld-hooks#readme",
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.1",
     "@storybook/addon-docs": "^7.0.18",
