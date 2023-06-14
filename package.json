@@ -1,6 +1,7 @@
 {
   "name": "react-sld-hooks",
-  "version": "1.0.0",
+  "version": "1.0.2",
+  "homepage": "https://react-sld-hooks.netlify.app/",
   "description": "A library for react custom hooks.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
