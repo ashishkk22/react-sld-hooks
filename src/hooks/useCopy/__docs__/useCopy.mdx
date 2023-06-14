@@ -1,0 +1,50 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import Example from "./Example.tsx";
+import * as useCopy from "./useCopy.stories.tsx";
+
+<Meta of={useCopy} title="useCopy" />
+
+# useCopy
+
+The useCopy hook is a custom React hook that enables copying and pasting `text` using the browser's clipboard. The hook returns an object containing the current `text` value, the `copy` function, and the `paste` function.
+
+### Reference
+
+```ts
+const useCopy = () => {
+  text: string;
+  copy: (text: string) => Promise<void>;
+  paste: () => Promise<void>;
+};
+```
+
+### Usage
+
+```tsx
+import { useCopy } from "react-sld-hooks";
+
+const Example: FC<ExampleProps> = ({ value }) => {
+  const { text, copy, paste } = useCopy();
+
+  return (
+    <div>
+      <div>
+        {/** setting the initial state */}
+        <input type="text" value={value} />
+        {/** copying the value to the clipboard */}
+        <button onClick={() => copy(value)}>copy </button>
+      </div>
+      <div>
+        <p>Select me and copy (click paste) </p>
+        {/** pasting the value from the clipboard */}
+        <input type="text" value={text} />
+        <button onClick={() => paste()}>paste</button>
+      </div>
+    </div>
+  );
+};
+```
+
+### Example
+
+<Canvas of={useCopy.Example_useCopy} />
