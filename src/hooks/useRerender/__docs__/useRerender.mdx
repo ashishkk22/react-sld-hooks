@@ -1,0 +1,39 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import Example from "./Example.tsx";
+import * as useRerender from "./useRerender.stories.tsx";
+
+<Meta of={useRerender} title="useRerender" />
+
+# useRerender
+
+The useRerender hook is a custom React hook that enables you to forceRender any react component.
+
+### Reference
+
+```ts
+const useRerender = () => () => void;
+```
+
+### Usage
+
+```tsx
+import { useRerender, useRenderCount } from "react-sld-hooks";
+
+const Example = () => {
+  const [counter, setCounter] = React.useState(0);
+  const renderer = useRerender();
+  const renderCount = useRenderCount();
+  return (
+    <div>
+      <div>current counter : {counter}</div>
+      <button onClick={() => setCounter((prev) => prev + 1)}>increase</button>
+      <div>total render : {renderCount}</div>
+      <button onClick={() => renderer()}>rerender</button>
+    </div>
+  );
+};
+```
+
+### Example
+
+<Canvas of={useRerender.Example_useRerender} />

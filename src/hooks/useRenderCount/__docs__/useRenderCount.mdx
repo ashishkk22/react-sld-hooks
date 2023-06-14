@@ -1,0 +1,39 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import Example from "./Example.tsx";
+import * as useRenderCount from "./useRenderCount.stories.tsx";
+
+<Meta of={useRenderCount} title="useRenderCount" />
+
+# useRenderCount
+
+The useRenderCount hook is a custom React hook that enables you to get the total render of any component.
+
+### Reference
+
+```ts
+const useRenderCount = () => number;
+```
+
+### Usage
+
+```tsx
+import { useRenderCount } from "react-sld-hooks";
+
+const Example: React.FC<ExampleProps> = ({ initialCounter }) => {
+  const [counter, setCounter] = React.useState(initialCounter);
+
+  const renderCount = useRenderCount();
+
+  return (
+    <div>
+      <div>current counter : {counter}</div>
+      <button onClick={() => setCounter((prev) => prev + 1)}>increase</button>
+      <div>component render count : {renderCount}</div>
+    </div>
+  );
+};
+```
+
+### Example
+
+<Canvas of={useRenderCount.Example_useRenderCount} />

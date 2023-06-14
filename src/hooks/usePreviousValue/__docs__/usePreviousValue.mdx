@@ -1,0 +1,42 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import Example from "./Example.tsx";
+import * as UsePreviousValue from "./usePreviousValue.stories.tsx";
+
+<Meta of={UsePreviousValue} title="usePreviousValue" />
+
+# usePreviousValue
+
+Sometimes you need to know the previous value of a state. This hook will give you that value.
+
+### Reference
+
+```ts
+const usePreviousValue = <TValue>(value: TValue) => TValue | undefined;
+```
+
+### Arguments
+
+- **value** - An value that you want in the next component re-render.
+
+### Usage
+
+```tsx
+import { usePreviousValue } from "react-sld-hooks";
+
+const Component = () => {
+  const [count, setCount] = useState(0);
+  const previousCount = usePreviousValue(count);
+  return (
+    <div>
+      <p>
+        Current: {count} - Previous: {previousCount}
+      </p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+};
+```
+
+### Example
+
+<Canvas of={UsePreviousValue.Example_usePreviousValue} />
