@@ -1,0 +1,39 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import Example from "./Example.tsx";
+import * as useEventListener from "./useEventListener.stories.tsx";
+
+<Meta of={useEventListener} title="useEventListener" />
+
+# useEventListener
+
+The useEventListener hook is a custom React hook that enables give the status of the document's focus.
+
+### Reference
+
+```ts
+const useEventListener = () => boolean;
+```
+
+### Usage
+
+```tsx
+import { useEventListener } from "react-sld-hooks";
+
+const Example = () => {
+  //gives us a boolean value
+  const hasFocus = useEventListener();
+
+  return (
+    <div>
+      <div>click me</div>
+      <div>{hasFocus ? "document is focused" : "document is not focused"}</div>
+    </div>
+  );
+};
+
+export default Example;
+```
+
+### Example
+
+<Canvas of={useEventListener.Example_useEventListener} />

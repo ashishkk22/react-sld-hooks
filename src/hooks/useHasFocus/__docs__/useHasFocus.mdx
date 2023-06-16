@@ -1,0 +1,39 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import Example from "./Example.tsx";
+import * as useHasFocus from "./useHasFocus.stories.tsx";
+
+<Meta of={useHasFocus} title="useHasFocus" />
+
+# useHasFocus
+
+The useHasFocus hook is a custom React hook that enables give the status of the document's focus.
+
+### Reference
+
+```ts
+const useHasFocus = () => boolean;
+```
+
+### Usage
+
+```tsx
+import { useHasFocus } from "react-sld-hooks";
+
+const Example = () => {
+  //gives us a boolean value
+  const hasFocus = useHasFocus();
+
+  return (
+    <div>
+      <div>click me</div>
+      <div>{hasFocus ? "document is focused" : "document is not focused"}</div>
+    </div>
+  );
+};
+
+export default Example;
+```
+
+### Example
+
+<Canvas of={useHasFocus.Example_useHasFocus} />
